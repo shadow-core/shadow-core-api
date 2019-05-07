@@ -24,6 +24,8 @@ app.use(function(req, res, next) {
 require('./router/index').default(app);
 
 //run express
-app.listen(port, function() {
+let server = app.listen(port, function() {
     console.log(`Skindu API is now running at port ${port}`);
 });
+
+module.exports = server;
