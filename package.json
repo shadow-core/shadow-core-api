@@ -1,10 +1,10 @@
 {
-  "name": "skindu-api",
+  "name": "shadowcore-api",
   "version": "0.0.1",
-  "description": "Skindu API/Backend",
-  "main": "skindu-api.js",
+  "description": "Shadowcore API/Backend",
+  "main": "shadowcore-api.js",
   "scripts": {
-    "start": "npx babel-node skindu-api.js",
+    "start": "nodemon --exec npx babel-node shadowcore-api.js",
     "test": "npx mocha --require @babel/register --require @babel/polyfill --timeout 20000 --exit"
   },
   "author": "Gray Hound",
@@ -25,13 +25,14 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.4",
-    "@babel/polyfill": "^7.4.4",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "chai-string": "^1.5.0",
     "chai-subset": "^1.6.0",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.0"
   }
 }
