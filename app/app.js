@@ -11,6 +11,9 @@ let port = config.port;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//connect mongo
+require('./connection');
+
 //this is REST API so there's not need to check for origin or CORS or anything else
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -28,7 +31,7 @@ require('./router/index').default(app);
 
 //run express
 let server = app.listen(port, function() {
-    console.log(`Skindu API is now running at port ${port}`);
+    console.log(`Shadow-Core API is now running at port ${port}`);
 });
 
 //export express

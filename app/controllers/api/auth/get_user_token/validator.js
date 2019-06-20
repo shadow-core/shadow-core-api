@@ -1,7 +1,7 @@
 const { checkSchema  } = require('express-validator/check/index');
 import json_answers from './json_answer';
 const bcrypt = require('bcryptjs');
-import UserModel from '../../../../../3dparty/express-core-users/models/user';
+import User from 'shadow-core-users';
 
 module.exports = checkSchema({
     email: {
@@ -17,7 +17,7 @@ module.exports = checkSchema({
         custom: {
             options: (value) => {
                 return new Promise(function (resolve, reject) {
-                    UserModel.findByEmail(value, function (err, user) {
+                    User.findByEmail(value, function (err, user) {
                         if (err) {
                             reject(err);
                         }else{
@@ -48,7 +48,7 @@ module.exports = checkSchema({
         custom: {
             options: (value, { req }) => {
                 return new Promise(function (resolve, reject) {
-                    UserModel.findByEmail(req.body.email, function (err, user) {
+                    User.findByEmail(req.body.email, function (err, user) {
                         if (err) {
                             reject(err);
                         }else{

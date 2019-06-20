@@ -1,4 +1,4 @@
-import { BasicController } from 'express-core-basic';
+import { BasicController } from 'shadow-core-basic';
 import AuthGetUserTokenHelper from './auth/get_user_token/helper.js'
 
 import AuthGetUserTokenJsonAnswers from './auth/get_user_token/json_answer';

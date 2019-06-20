@@ -1,4 +1,4 @@
-import UserModel from '../../../../../3dparty/express-core-users/models/user';
+import User from 'shadow-core-users';
 
 /**
  * Helper for auth/getToken action
@@ -12,7 +12,7 @@ export default class AuthGetUserTokenHelper {
      */
     async getUserByEmail(email) {
 
-        let user = await UserModel.findOne(
+        let user = await User.findOne(
             {
                 'email': email,
                 'isDeleted': { $ne: true },
