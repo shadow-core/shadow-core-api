@@ -6,8 +6,8 @@ import AuthGetUserTokenJsonAnswers from './auth/get_user_token/json_answer';
 let config = require('../../config/config');
 let jwt = require('jsonwebtoken');
 
-const { validationResult } = require('express-validator/check/index');
-const { matchedData } = require('express-validator/filter/index');
+//const { validationResult } = require('express-validator/check/index');
+//const { matchedData } = require('express-validator/filter/index');
 
 /**
  * Authentication and tokens.

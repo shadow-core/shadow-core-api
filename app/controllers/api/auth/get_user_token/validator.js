@@ -1,4 +1,4 @@
-const { checkSchema  } = require('express-validator/check/index');
+//const { checkSchema  } = require('express-validator/check/index');
 import json_answers from './json_answer';
 const bcrypt = require('bcryptjs');
 import User from 'shadow-core-users';

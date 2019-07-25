@@ -7,7 +7,6 @@ export default function(app) {
 
   // Handle errors
   app.use(function(error, req, res, next) {
-    console.log(error);
     if (res.status == 403) {
       return res.status(403).send({'success': false, code: 403, 'message': "Access Denied"});
     }
