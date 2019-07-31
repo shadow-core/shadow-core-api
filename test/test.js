@@ -23,6 +23,8 @@ before(function (done) {
 import {ExpressCoreUsersTestsSignup, ExpressCoreUsersTestsEmailVerification,
   ExpressCoreUsersTestsResendVerificationEmail, ExpressCoreUsersTestsResetPassword } from 'shadow-core-users';
 
+import { ExpressCoreAuthTestsUserToken } from 'shadow-core-auth';
+
 const apiPrefix = '/api/v1';
 
 //We need our server to pass it to the tests. We are testing API, right?=
@@ -33,4 +35,6 @@ describe("User tests", function() {
   ExpressCoreUsersTestsEmailVerification(server, apiPrefix, models);
   ExpressCoreUsersTestsResendVerificationEmail(server, apiPrefix, models);
   ExpressCoreUsersTestsResetPassword(server, apiPrefix, models);
+
+  ExpressCoreAuthTestsUserToken(server, apiPrefix, models);
 });
