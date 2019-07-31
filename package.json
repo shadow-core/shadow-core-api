@@ -19,9 +19,9 @@
     "mongoose": "^5.6.3",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "shadow-core-auth": "^0.0.1",
+    "shadow-core-auth": "^0.0.2",
     "shadow-core-basic": "^0.0.6",
-    "shadow-core-users": "^0.0.10",
+    "shadow-core-users": "^0.0.11",
     "yn": "^3.1.0"
   },
   "devDependencies": {
