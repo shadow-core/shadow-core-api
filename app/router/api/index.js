@@ -2,16 +2,14 @@
 import { UserRouter } from 'shadow-core-users';
 import { AuthRouter } from 'shadow-core-auth';
 
-//models
-import models from '../../models';
-import config from '../../config/config';
+const express = require('express');
 
 //create and attach routes
-export default function(express) {
-  let router = express.Router();
+export default function(app) {
+  app.router = express.Router();
 
-  UserRouter(router, models, config.users);
-  AuthRouter(router, models, config.auth);
+  UserRouter(app);
+  AuthRouter(app);
 
-  return router;
+  return app.router;
 }
