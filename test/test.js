@@ -20,8 +20,7 @@ before(function (done) {
 });
 
 //import tests themselves
-import {ExpressCoreUsersTestsSignup, ExpressCoreUsersTestsEmailVerification,
-  ExpressCoreUsersTestsResendVerificationEmail, ExpressCoreUsersTestsResetPassword } from 'shadow-core-users';
+import { UserTests } from 'shadow-core-users';
 
 import { ExpressCoreAuthTestsUserToken } from 'shadow-core-auth';
 
@@ -31,10 +30,10 @@ const apiPrefix = '/api/v1';
 const server = require('../app/app');
 
 describe("User tests", function() {
-  ExpressCoreUsersTestsSignup(server, apiPrefix, models);
-  ExpressCoreUsersTestsEmailVerification(server, apiPrefix, models);
-  ExpressCoreUsersTestsResendVerificationEmail(server, apiPrefix, models);
-  ExpressCoreUsersTestsResetPassword(server, apiPrefix, models);
+  UserTests.Signup(server, apiPrefix, models);
+  UserTests.EmailVerification(server, apiPrefix, models);
+  UserTests.ResendVerificationEmail(server, apiPrefix, models);
+  UserTests.ResetPassword(server, apiPrefix, models, { testAuthentication: true });
 
   ExpressCoreAuthTestsUserToken(server, apiPrefix, models);
 });

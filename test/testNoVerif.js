@@ -33,5 +33,5 @@ describe("User tests - no email verification", function() {
   ExpressCoreUsersTestsSignup(server, apiPrefix, models, true);
   ExpressCoreUsersTestsEmailVerificationEmpty(server, apiPrefix, models);
   ExpressCoreUsersTestsResendVerificationEmailEmpty(server, apiPrefix, models);
-  ExpressCoreUsersTestsResetPassword(server, apiPrefix, models);
+  ExpressCoreUsersTestsResetPassword(server, apiPrefix, models, { testAuthentication: true });
 });
