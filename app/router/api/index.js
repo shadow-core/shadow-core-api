@@ -1,6 +1,7 @@
 //routes
 import { UserRouter } from 'shadow-core-users';
 import { AuthRouter } from 'shadow-core-auth';
+import { ProfileRouter } from 'shadow-core-profile';
 
 const express = require('express');
 
@@ -10,6 +11,7 @@ export default function(app) {
 
   UserRouter(app);
   AuthRouter(app);
+  ProfileRouter(app);
 
   return app.router;
 }

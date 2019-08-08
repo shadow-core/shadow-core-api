@@ -9,11 +9,9 @@ export default {
       'password_reset_timeout': 3600 * 1000,
       'password_reset_amount': 3,
       'mustVerifyEmail': process.env.SIGNUP_MUST_VERIFY_EMAIL ? yn(process.env.SIGNUP_MUST_VERIFY_EMAIL) : true,
+      'maxVerificationTime': 7 * 24 * 3600 * 1000,
     },
     'auth': {
-      'jwtSecret': process.env.JWT_SECRET || 'J6vg20RP7K7ZGi7G43Pd0ZOyE7c8skRG9VIj73tSh3Tl5I7xl4F5zbHXO3pIKjTo',
-      'jwtSession': {
-        session: false,
-      },
+      'jwtSecret': process.env.JWT_SECRET || 'J6vg20RP7K7ZGi7G43Pd0ZOyE7c8skRG9VIj73tSh3Tl5I7xl4F5zbHXO3pIKjTo'
     }
 }

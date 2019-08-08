@@ -18,8 +18,8 @@ before(function (done) {
 
 //import tests themselves
 import { UserTests } from 'shadow-core-users';
-
 import { AuthTests } from 'shadow-core-auth';
+import { ProfileTests } from 'shadow-core-profile';
 
 const apiPrefix = '/api/v1';
 
@@ -27,10 +27,15 @@ const apiPrefix = '/api/v1';
 const app = require('../app/app').default;
 
 describe("User tests", function() {
+  // shadow-core-user tests
   UserTests.Signup(app, { apiPrefix });
   UserTests.EmailVerification(app, { apiPrefix });
   UserTests.ResendVerificationEmail(app, { apiPrefix });
   UserTests.ResetPassword(app, { testAuthentication: true, apiPrefix });
 
+  // shadow-core-auth tests
   AuthTests.UserToken(app, { apiPrefix });
+
+  // shadow-core-profile tests
+  ProfileTests.Profile(app, { apiPrefix });
 });
