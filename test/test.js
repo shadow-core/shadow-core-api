@@ -31,11 +31,12 @@ describe("User tests", function() {
   UserTests.Signup(app, { apiPrefix });
   UserTests.EmailVerification(app, { apiPrefix });
   UserTests.ResendVerificationEmail(app, { apiPrefix });
-  UserTests.ResetPassword(app, { testAuthentication: true, apiPrefix });
+  UserTests.ResetPassword(app, { testAuthentication: true, hasProfile: true, apiPrefix });
 
   // shadow-core-auth tests
   AuthTests.UserToken(app, { apiPrefix });
 
   // shadow-core-profile tests
   ProfileTests.Profile(app, { apiPrefix });
+  ProfileTests.ChangePassword(app, { apiPrefix });
 });
