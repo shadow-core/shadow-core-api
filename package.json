@@ -11,18 +11,20 @@
   "author": "Gray Hound",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
     "async": "^3.1.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.3",
+    "mustache": "^3.1.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "shadow-core-auth": "^0.0.3",
     "shadow-core-basic": "^0.0.6",
-    "shadow-core-users": "^0.0.11",
     "shadow-core-profile": "^0.0.2",
+    "shadow-core-users": "^0.0.11",
     "yn": "^3.1.0"
   },
   "devDependencies": {
