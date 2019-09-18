@@ -1,5 +1,3 @@
-import {AuthTests} from "shadow-core-auth";
-
 process.env.MONGODB_URL = process.env.TEST_MONGODB_URL || 'mongodb://localhost:27017/shadow_core_test';
 process.env.PORT = process.env.TEST_PORT || 5012; //let's test on different port
 process.env.TEST_ENV = true;
@@ -9,7 +7,12 @@ let mongoose = require('mongoose');
 
 //drop all data before all tests
 before(function (done) {
-  let testDB = mongoose.createConnection(process.env.MONGODB_URL, function(error) {
+  let testDB = mongoose.createConnection(process.env.MONGODB_URL,
+    {
+      useCreateIndex: true,
+      useNewUrlParser: true,
+    },
+    function(error) {
     throw error;
   });
   testDB.once('open', () => {
@@ -21,7 +24,8 @@ before(function (done) {
 
 //import tests themselves
 import { UserTests } from 'shadow-core-users';
-import {ProfileTests} from "shadow-core-profile";
+import { AuthTests } from 'shadow-core-auth';
+import { ProfileTests } from 'shadow-core-profile';
 
 const apiPrefix = '/api/v1';
 

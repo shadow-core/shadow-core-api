@@ -6,7 +6,12 @@ let mongoose = require('mongoose');
 
 //drop all data before all tests
 before(function (done) {
-  let testDB = mongoose.createConnection(process.env.MONGODB_URL, function(error) {
+  let testDB = mongoose.createConnection(process.env.MONGODB_URL,
+    {
+      useCreateIndex: true,
+      useNewUrlParser: true,
+    },
+    function(error) {
     throw error;
   });
   testDB.once('open', () => {
