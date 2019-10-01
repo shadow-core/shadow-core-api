@@ -9,9 +9,13 @@ const express = require('express');
 export default function(app) {
   app.router = express.Router();
 
-  UserRouter(app);
-  AuthRouter(app);
-  ProfileRouter(app);
+  const userRouter = new UserRouter(app);
+  const authRouter = new AuthRouter(app);
+  const profileRouter = new ProfileRouter(app);
+
+  userRouter.compile();
+  authRouter.compile();
+  profileRouter.compile();
 
   return app.router;
 }
